@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global COVID-19 Tracker with Records</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-globe-americas"></i> Global COVID-19 Tracker</h1>
+      <p>Track real-time COVID-19 statistics and country information for any nation worldwide</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" id="tracker-tab"><i class="fas fa-search"></i> COVID Tracker</button>
+      <button class="tab-btn" id="records-tab"><i class="fas fa-database"></i> Saved Records</button>
+    </div>
+
+    <div id="tracker-section">
+      <div class="card controls">
+        <label for="country-select"><i class="fas fa-search"></i> Select a Country:</label>
+        <select id="country-select">
+          <option value="">-- Please Choose a Country --</option>
+        </select>
+      </div>
+
+      <div class="error" id="error-message"></div>
+      <div class="success" id="success-message"></div>
+
+      <div class="spinner" id="loading-spinner" style="display: none;">
+        <i class="fas fa-spinner"></i>
+        Loading data...
+      </div>
+
+      <div class="dashboard" id="dashboard" style="display: none;">
+        <div class="card country-info">
+          <h2><i class="fas fa-info-circle"></i> Country Information</h2>
+          <img id="country-flag" src="" alt="Country Flag" class="flag">
+          <div class="info-item"><span class="info-label">Country Name:</span><span class="info-value" id="country-name"></span></div>
+          <div class="info-item"><span class="info-label">Capital City:</span><span class="info-value" id="country-capital"></span></div>
+          <div class="info-item"><span class="info-label">Population:</span><span class="info-value" id="country-population"></span></div>
+          <div class="info-item"><span class="info-label">Currency:</span><span class="info-value" id="country-currency"></span></div>
+          <div class="info-item"><span class="info-label">Region:</span><span class="info-value" id="country-region"></span></div>
+        </div>
+
+        <div class="card covid-info">
+          <h2><i class="fas fa-virus"></i> COVID-19 Statistics</h2>
+          <div class="info-item"><span class="info-label">Total Cases:</span><span class="info-value" id="covid-cases"></span></div>
+          <div class="info-item"><span class="info-label">Today's Cases:</span><span class="info-value" id="covid-today-cases"></span></div>
+          <div class="info-item"><span class="info-label">Total Deaths:</span><span class="info-value" id="covid-deaths"></span></div>
+          <div class="info-item"><span class="info-label">Today's Deaths:</span><span class="info-value" id="covid-today-deaths"></span></div>
+          <div class="info-item"><span class="info-label">Total Recovered:</span><span class="info-value" id="covid-recovered"></span></div>
+          <div class="info-item"><span class="info-label">Active Cases:</span><span class="info-value" id="covid-active"></span></div>
+          <div class="info-item"><span class="info-label">Cases per Million:</span><span class="info-value" id="covid-cases-per-million"></span></div>
+        </div>
+      </div>
+
+      <div class="action-buttons" id="action-buttons" style="display: none;">
+        <button class="btn btn-primary" id="save-btn"><i class="fas fa-save"></i> Save Record</button>
+        <button class="btn btn-success" id="view-records-btn"><i class="fas fa-database"></i> View Saved Records</button>
+      </div>
+
+      <div class="updated">
+        Last updated: <span id="last-updated"></span>
+      </div>
+    </div>
+
+    <div id="records-section" style="display: none;">
+      <div class="card">
+        <h2><i class="fas fa-database"></i> Saved COVID-19 Records</h2>
+        <div class="records-container" id="records-list"></div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="back-to-tracker"><i class="fas fa-arrow-left"></i> Back to Tracker</button>
+        <button class="btn btn-success" id="clear-records"><i class="fas fa-trash"></i> Clear All Records</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Data provided by disease.sh and RestCountries APIs </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

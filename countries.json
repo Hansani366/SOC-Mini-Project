@@ -1,0 +1,12 @@
+[
+  {"name": {"common": "United States"}, "cca2": "US"},
+  {"name": {"common": "United Kingdom"}, "cca2": "GB"},
+  {"name": {"common": "Canada"}, "cca2": "CA"},
+  {"name": {"common": "Australia"}, "cca2": "AU"},
+  {"name": {"common": "Germany"}, "cca2": "DE"},
+  {"name": {"common": "France"}, "cca2": "FR"},
+  {"name": {"common": "Japan"}, "cca2": "JP"},
+  {"name": {"common": "India"}, "cca2": "IN"},
+  {"name": {"common": "Brazil"}, "cca2": "BR"},
+  {"name": {"common": "Sri Lanka"}, "cca2": "LK"}
+]
